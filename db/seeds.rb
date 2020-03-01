@@ -80,7 +80,7 @@ Element.create(name: "Neodymium", symbol: "Nd", atomic_number: 60, weight: 144.2
 Element.create(name: "Promethium", symbol: "Pm", atomic_number: 61, weight: 145.000, category_id: 3)
 Element.create(name: "Samarium", symbol: "Sm", atomic_number: 62, weight: 150.360, category_id: 3)
 Element.create(name: "Europium", symbol: "Eu", atomic_number: 63, weight: 151.964, category_id: 3)
-Element.create(name: "Gadolinium", symbol: "Gd", atomic_number: 64, weight: 157.250`, category_id: 3)
+Element.create(name: "Gadolinium", symbol: "Gd", atomic_number: 64, weight: 157.250, category_id: 3)
 Element.create(name: "Terbium", symbol: "Tb", atomic_number: 65, weight: 158.925, category_id: 3)
 Element.create(name: "Dysprosium", symbol: "Dy", atomic_number: 66, weight: 162.500, category_id: 3)
 Element.create(name: "Holmium", symbol: "Ho", atomic_number: 67, weight: 164.930, category_id: 3)
