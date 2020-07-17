@@ -1,8 +1,8 @@
 class CategoriesController < ApplicationController
 
   def index
-    @categories = Categories.all
-    render json: @categories
+    categories = Category.all
+    render json: categories
   end
 
 end
