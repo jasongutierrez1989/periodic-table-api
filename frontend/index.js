@@ -1,5 +1,3 @@
-//let elementsArray = [];
-
 let elementsFetch = fetch(`http://localhost:3000/elements`)
   .then(function(response) {
     return response.json();
@@ -8,8 +6,6 @@ let elementsFetch = fetch(`http://localhost:3000/elements`)
     return json
   });
 
-//let categoriesArray = [];
-
 let categoriesFetch = fetch(`http://localhost:3000/categories`)
   .then(function(response) {
     return response.json();
@@ -17,22 +13,6 @@ let categoriesFetch = fetch(`http://localhost:3000/categories`)
   .then(function(json) {
     return json
   });
-
-//async function categoryTable() {
-//  categoriesArray = new Array(await categoriesFetch);
-//
-//  for (let i = 0; i < 9; i++) {
-//    let grid = document.getElementById('container');
-//    let textnode = document.createTextNode(categoriesArray[0][i].name);
-//    let textDiv = document.createElement('div');
-//    let catDiv = document.createElement('div');
-//    let tableDiv = document.createElement('div');
-//    textDiv.appendChild(textnode);
-//    catDiv.appendChild(textDiv);
-//    tableDiv.appendChild(catDiv);
-//    grid.appendChild(tableDiv);
-//  }
-//}
 
 async function convertArray() {
   elementsArray = new Array(await elementsFetch);
@@ -56,12 +36,13 @@ async function convertArray() {
     newDiv.appendChild(textDiv);
     grid.appendChild(newDiv);
 
-    addBlankDivs(i, 0, 11);
-    addBlankDivs(i, 3, 5);
-    addBlankDivs(i, 11, 5);
+    addBlankDivs(i, 0, 8);
+    addBlankDivs(i, 3, 2);
+    addBlankDivs(i, 11, 2);
     addBlankDivs(i, 56, 1);
     addBlankDivs(i, 87, 1);
     addBlankDivs(i, 118, 21);
+
   }
   categoriesArray = new Array(await categoriesFetch);
 
@@ -80,6 +61,23 @@ async function convertArray() {
   }
 
   addBlankDivs(1, 1, 21);
+  
+  for (let i = 0; i < elementSelect.length; i++) {
+    elementSelect[i].addEventListener("mouseenter", function() {
+      let textnode = document.createTextNode(elementsArray[0][i].atomic_number);
+      let textnode2 = document.createTextNode(elementsArray[0][i].symbol);
+      let textnode3 = document.createTextNode(elementsArray[0][i].name);
+      let textnode4 = document.createTextNode(elementsArray[0][i].weight);
+      let atomicNode = document.getElementById('BA');
+      let symbolNode = document.getElementById('BS');
+      let nameNode = document.getElementById('BN');
+      let weightNode = document.getElementById('BW');
+      atomicNode.textContent = textnode.textContent;
+      symbolNode.textContent = textnode2.textContent;
+      nameNode.textContent = textnode3.textContent;
+      weightNode.textContent = textnode4.textContent;
+    })
+  }
 }
 
 function addIndexNum(a, b, c) {
@@ -118,6 +116,32 @@ function addBlankDivs(a, b, c) {
 //python -m SimpleHTTPServer
 
 convertArray();
+
+let elementSelect = document.getElementsByClassName('element');
+
+for (let i = 0; i < elementSelect.length; i++) {
+  elementSelect[i].addEventListener("mouseenter", function() {
+    let textnode = document.createTextNode(elementsArray[0][i].atomic_number);
+    let textnode2 = document.createTextNode(elementsArray[0][i].symbol);
+    let textnode3 = document.createTextNode(elementsArray[0][i].name);
+    let textnode4 = document.createTextNode(elementsArray[0][i].weight);
+    let div1 = document.createElement('div');
+    div1.appendChild(textnode);
+    let div2 = document.createElement('div');
+    div2.appendChild(textnode2);
+    let div3 = document.createElement('div');
+    div3.appendChild(textnode3);
+    let div4 = document.createElement('div');
+    div4.appendChild(textnode4);
+
+    bigElement.appendChild(div1);
+    bigElement.appendChild(div2);
+    bigElement.appendChild(div3);
+    bigElement.appendChild(div4);
+  })
+}
+
+let bigElement = document.getElementById('blank2');
 
 //function backgroundColor() {
 //  highlight.addClass('Element');

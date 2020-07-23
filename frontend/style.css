@@ -80,6 +80,43 @@ h1 {
   opacity: 50%;
 }
 
+#bigElement {
+  grid-column: 5 / 8;
+  grid-row: 2 / 5;
+  padding: 5%;
+}
+
+#bigElementInner {
+  display: grid;
+  grid-template-columns: 1fr)
+  grid-template-rows: repeat(4, 1fr);
+  border: 1px solid black;
+}
+
+#BA {
+  margin-top: 1%;
+  margin-bottom: 0px;
+}
+
+#BS {
+  font-size: 200%;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  text-align: center;
+  font-weight: bold;
+}
+
+#BN {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  text-align: center;
+}
+
+#BW {
+  margin-top: 5%;
+  margin-bottom: 1%;
+}
+
 #category-0 {
   writing-mode: vertical-lr;
   grid-row: 1 / span 2;
@@ -154,7 +191,7 @@ h1 {
 .element:after {
   content: "";
   display: grid;
-  padding-bottom: 40%;
+  padding-bottom: 30%;
   grid-area: main;
 }
 
